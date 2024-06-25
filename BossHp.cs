@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+a
 public class BossHp : MonoBehaviour
 {
-    Transform playerTr;//Player‚Ìƒgƒ‰ƒ“ƒXƒtƒH[ƒ€
+    Transform playerTr;//Playerã®ãƒˆãƒ©ãƒ³ã‚¹ãƒ•ã‚©ãƒ¼ãƒ 
     
    
     [SerializeField] int hp = 5;
@@ -30,11 +30,11 @@ public class BossHp : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Attack"))//UŒ‚‚³‚ê‚½‚çHpŒ¸‚é
+        if (other.CompareTag("Attack"))//æ”»æ’ƒã•ã‚ŒãŸã‚‰Hpæ¸›ã‚‹
         {
-            // ƒmƒbƒNƒoƒbƒN•ûŒü‚ğ‹‚ß‚é
+            // ãƒãƒƒã‚¯ãƒãƒƒã‚¯æ–¹å‘ã‚’æ±‚ã‚ã‚‹
             Vector2 knockbackDirection = new Vector2(transform.position.x - other.transform.position.x, 0).normalized;
-            // eƒIƒuƒWƒFƒNƒg‚ÉƒmƒbƒNƒoƒbƒN‚ğ‰Á‚¦‚é
+            // è¦ªã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã«ãƒãƒƒã‚¯ãƒãƒƒã‚¯ã‚’åŠ ãˆã‚‹
             KnockbackParentObject(knockbackDirection * knockbackForce);
 
             hp -= 1;
@@ -48,7 +48,7 @@ public class BossHp : MonoBehaviour
     }
     void KnockbackParentObject(Vector2 direction)
     {
-        // ƒmƒbƒNƒoƒbƒN‚ğŠJn‚·‚é
+        // ãƒãƒƒã‚¯ãƒãƒƒã‚¯ã‚’é–‹å§‹ã™ã‚‹
         StartCoroutine(DoKnockback(direction));
     }
 
@@ -58,15 +58,15 @@ public class BossHp : MonoBehaviour
     {
         isKnockback = true;
 
-        // ƒmƒbƒNƒoƒbƒN•ûŒü‚É—Í‚ğ‰Á‚¦‚éieƒIƒuƒWƒFƒNƒg‚ÌRigidbody2D‚ğg—pj
+        // ãƒãƒƒã‚¯ãƒãƒƒã‚¯æ–¹å‘ã«åŠ›ã‚’åŠ ãˆã‚‹ï¼ˆè¦ªã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®Rigidbody2Dã‚’ä½¿ç”¨ï¼‰
         parentRb.velocity = direction * knockbackForce;
 
-        // ƒmƒbƒNƒoƒbƒN‚ªI‚í‚é‚Ü‚Å‘Ò‚Â
+        // ãƒãƒƒã‚¯ãƒãƒƒã‚¯ãŒçµ‚ã‚ã‚‹ã¾ã§å¾…ã¤
         yield return new WaitForSeconds(knockbackDuration);
 
         isKnockback = false;
 
-        // ƒmƒbƒNƒoƒbƒNI—¹Œã‚É‘¬“x‚ğƒ[ƒ‚É‚·‚éi•K—v‚É‰‚¶‚Äj
+        // ãƒãƒƒã‚¯ãƒãƒƒã‚¯çµ‚äº†å¾Œã«é€Ÿåº¦ã‚’ã‚¼ãƒ­ã«ã™ã‚‹ï¼ˆå¿…è¦ã«å¿œã˜ã¦ï¼‰
         parentRb.velocity = Vector2.zero;
 
 
