@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    // ˆÚ“®‘¬“x‚Ìw’è
+    // ç§»å‹•é€Ÿåº¦ã®æŒ‡å®š
     [SerializeField]
     private int moveSpeed;
 
-    // ƒIƒuƒWƒFƒNƒg‚ÌRigidbody2D‚ğƒAƒ^ƒbƒ`‚·‚é
+    // ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®Rigidbody2Dã‚’ã‚¢ã‚¿ãƒƒãƒã™ã‚‹
     public Rigidbody2D rb;
     public int _hp = 5;
 
@@ -21,7 +21,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Î‚ßˆÚ“®‚ª‚Å‚«‚È‚¢‚æ‚¤‚ÉAHorizontal‚Ì“ü—Í‚ğ—Dæ‚·‚é
+        // æ–œã‚ç§»å‹•ãŒã§ããªã„ã‚ˆã†ã«ã€Horizontalã®å…¥åŠ›ã‚’å„ªå…ˆã™ã‚‹
         if (Input.GetAxisRaw("Horizontal") != 0)
         {
             rb.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), 0).normalized * moveSpeed;
